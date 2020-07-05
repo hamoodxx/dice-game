@@ -46,8 +46,9 @@ document.querySelector('.btn-roll').addEventListener('click',function (){
 document.querySelector('.btn-hold').addEventListener('click',function () {
 
     scores[activPlayer] += rollGame;
+    var getValue = document.querySelector('.max-score').value;
     document.getElementById('score-' + activPlayer).textContent = scores[activPlayer];
-    if (scores[activPlayer] >= 100) {
+    if (scores[activPlayer] >= getValue) {
         document.getElementById('name-' + activPlayer).textContent = 'winner!';
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activPlayer + 'panel').classList.add('winner!');
